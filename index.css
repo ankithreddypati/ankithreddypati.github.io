@@ -1,0 +1,469 @@
+.canvas {
+    background-color: rgb(232,233,208);
+    width: 100vw;
+    height: 100vh;
+    position: relative; 
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.table {
+    width: 100%;
+    height: 25%;
+    background-color: white;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    border: 1px solid black;
+}
+
+.monitor {
+    position: relative; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -60%); 
+    height: 360px; 
+    width: 660px; 
+    /* height: 50vh; 
+    width: 45vw; */
+    border: 12px solid rgb(104,103,83);
+    background-color:rgb(216,95,71);
+}
+
+.taskbar{
+    background-color: rgb(229,165,157);
+    height: 14px;
+    border-bottom: 1px solid rgb(56, 54, 54);
+}
+
+.dock {
+    display: flex;
+    height: 10%;
+    width: 30%;
+    background-color: rgb(255,144,147);
+    /* border-radius: 5px; */
+    transform: translate(110%, 270%); 
+    /* border: 1px solid rgb(168,113,105); */
+    border: 1px solid rgb(56, 54, 54);
+}
+
+.terminal {
+    height: 40px;
+    display: flex;
+    width: 42px;
+    background-color: rgb(64,31,24);
+    border-radius: 4px;
+    transform: translate(22%, -30%); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.terminaltaskbar{
+    height: 20px;
+    background-color: rgb(232,233,208);
+    border-radius: 5px 5px 0px 0px;
+    border: 0.5px solid rgb(56, 54, 54);
+}
+
+
+.terminalclosebutton{
+    height: 15px;
+    width: 15px;
+    transform: translate(80%,20%);
+    border-radius: 50%;
+    background-color: rgb(216,95,71);
+}
+
+.projectclosebutton{
+    height: 15px;
+    width: 15px;
+    transform: translate(80%,20%);
+    border-radius: 50%;
+    background-color: rgb(216,95,71);
+}
+
+.myphoto{
+    height: 40px;
+    width: 42px;
+    background-color: rgb(232,233,208);
+    border: 1px solid rgb(104, 93, 91);
+    transform: translate(80%, -32%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.photohead{
+    height: 15px;
+    background-color: rgb(104, 93, 91);
+    border-radius: 10px;
+    transform: translate(50%, 10%);
+    width: 14px;
+}
+
+.photobody{
+    height: 12px;
+    background-color: rgb(104, 93, 91);
+    border-radius: 10px 10px 0px 0px;
+    transform: translate(50%, 10%);
+    width: 20px;
+}
+
+.photoinside{
+    height: 28px;
+    width: 34px; 
+    margin: 3px;
+    border: 1px solid rgb(104, 93, 91);
+    background-color: rgb(195,212,243);
+
+}
+
+.contact{
+    height: 40px;
+    width: 42px;
+    background-color: rgb(232,233,208);
+    border: 1px solid rgb(104, 93, 91);
+    transform: translate(135%, -32%);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mailicon {
+    position: relative;
+    height: 25px;
+    width: 35px;
+    background-color: skyblue;
+    border-radius: 4px; /* Slightly rounded corners */
+    transform: translate(10%, 30%);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  */
+}
+
+
+
+.terminalwords{
+    color: rgb(72, 170, 45);
+    font-size: 14px;
+    font-weight: bolder;
+    padding: 3px;
+    font-family: Arial, sans-serif;
+
+}
+.terminaldabba{
+    background-color:rgb(96,111,92) ;
+    height: 12px;
+    width: 5px;
+    margin-top: 5px;
+    
+}
+
+
+.applicationspaper {
+    position: relative;
+    height: 17%;
+    width: 20%;
+    transform: translate(12%, -190%);
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.applicationspaper::before {
+    content: '';
+    position: absolute;
+    top: -35px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 40px; 
+    height: 40px; 
+    background-color: #f8f8f8; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+
+.projectsfolderwindow {
+    display: none;
+    position: absolute;
+    font-size: 8px;
+    color: rgb(120, 120, 234);
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: gray;
+    /* padding: 10px; */
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: all 0.5s ease; /* Animate all properties */
+    z-index: 1; /* Make sure it's above other elements */
+    opacity: 0;
+}
+
+.projecttaskbar{
+    color:  rgb(156, 142, 142);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    height: 20px;
+    background-color: rgb(232,233,208);
+    border-radius: 5px 5px 0px 0px;
+    border: 1px rgb(56, 54, 54);
+    text-shadow:
+        -0.5px -0.5px 0 rgba(0, 0, 0, 0.3),  
+         0.5px -0.5px 0 rgba(0, 0, 0, 0.3),
+        -0.5px  0.5px 0 rgba(0, 0, 0, 0.3),
+         0.5px  0.5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.projectsfolderwindow.visible {
+    display: block;
+    top: 30%; /* Position where you want the terminal window to end up */
+    left: 12%;
+    width: 60%;
+    height: 45%;
+    opacity: 1;
+}
+
+.project {
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.foldersnames{
+    margin: 10px; 
+    font-size: 9px; 
+    color: white;
+    font-weight: 500; 
+    margin: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.terminalwindow {
+    display: none;
+    position: absolute;
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: rgb(64,31,24);
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: all 0.5s ease; /* Animate all properties */
+    z-index: 1; /* Make sure it's above other elements */
+    opacity: 0;
+    
+    /* border: 2px solid rgb(84,59,47) */
+}
+
+.terminalwindow.visible {
+    display: block;
+    top: 10%; /* Position where you want the terminal window to end up */
+    left: 80%;
+    width: 40%;
+    height: 60%;
+    opacity: 1;
+}
+
+
+
+
+.resumefile {
+    position: relative;
+    height: 40px;
+    width: 30px;
+    background-color: whitesmoke;
+    margin: 12px;
+       
+}
+
+.resumefile:before {
+    content: "";
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 0px;
+  height: 0px;
+  border-bottom: 12px solid #eee;
+  border-right: 12px solid rgb(216,95,71);
+  -webkit-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
+  box-shadow: -7px 7px 7px rgba(0,0,0,0.3);   
+  }
+
+  .cvword{
+    padding-top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(156, 142, 142);
+    font-size: 10px;
+    margin: 2px;
+    font-weight: bolder;
+    text-shadow:
+        -0.5px -0.5px 0 rgba(0, 0, 0, 0.3),  
+         0.5px -0.5px 0 rgba(0, 0, 0, 0.3),
+        -0.5px  0.5px 0 rgba(0, 0, 0, 0.3),
+         0.5px  0.5px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .cvlines {
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 10px; 
+}
+
+.cvline1, .cvline2{
+    height: 2px;
+    width: 80%; 
+    border-radius: 5px;
+    background-color: rgb(156, 142, 142);
+}
+
+.cvline3 {
+    height: 2px;
+    width: 50%; 
+    border-radius: 5px;
+    background-color: rgb(156, 142, 142);
+}
+
+
+.projectsfolder{
+    height: 30px;
+    width: 42px;
+    background-color: rgb(208,228,229);
+    border-radius: 2px;
+    margin: 12px;
+    border: 1px solid rgb(113, 111, 111);
+     ; 
+
+}
+
+.contactfolder{
+    height: 30px;
+    width: 30px;
+    background-color: rgb(208,228,229);
+    border-radius: 50%;
+    margin: 12px;
+    border: 1px solid rgb(113, 111, 111); 
+
+}
+
+
+.java-box {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.java-logo {
+    position: relative;
+}
+
+.cup {
+    width: 40px;
+    height: 35px;
+    background-color: red;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+    transform: translate(0,50%);
+}
+
+.handle {
+    width: 12px;
+    height: 12px;
+    border: 3px solid red;
+    border-top-left-radius: 12px;    /* Rounded top-left corner */
+    border-top-right-radius: 10px;   /* Rounded top-right corner */
+    border-bottom-left-radius: 0;    /* Sharp bottom-left corner */
+    border-bottom-right-radius: 16px; 
+    position: absolute;
+    right: -10px;
+    top: -3px;
+}
+
+.steam {
+    width: 2px;
+    height: 15px;
+    background-color: red;
+    position: absolute;
+    top: -3px;
+    border-radius: 2px;
+}
+
+.steam1{
+    left: 12px;
+    top: -6px;
+}
+
+/* resumefilewindow */
+
+.resumewindow {
+    display: none;
+    position: absolute;
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color:snow;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: all 0.5s ease; /* Animate all properties */
+    z-index: 1; /* Make sure it's above other elements */
+    opacity: 0;
+    
+}
+
+.show {
+    display: block;
+    top: 19%; /* Position where you want the terminal window to end up */
+    left: -40%;
+    width: 95%;
+    height: 120%;
+    opacity: 1;
+}
+
+.resumewindowtaskbar{
+    height: 20px;
+    background-color: rgb(232,233,208);
+    border-radius: 5px 5px 0px 0px;
+    border: 0.5px solid rgb(56, 54, 54);
+}
+
+
+.resclosebutton {
+    height: 15px;
+    width: 15px;
+    transform: translate(80%,20%);
+    border-radius: 50%;
+    background-color: rgb(216,95,71);
+}
+
+
+
+
+  
+
+
+
+
