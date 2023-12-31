@@ -46,10 +46,35 @@ body {
     width: 30%;
     background-color: rgb(255,144,147);
     /* border-radius: 5px; */
-    transform: translate(110%, 270%); 
+    transform: translate(110%, 445%); 
     /* border: 1px solid rgb(168,113,105); */
     border: 1px solid rgb(56, 54, 54);
 }
+
+.cloudimage, .foodiamge , .houseimage{
+    height: 25px;
+    margin: 4px; 
+}
+
+.cloudprojecthover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 160%;
+    transform: translate(12%, 23%); 
+    background-color: rgb(216,176,164);/* Set the background color and opacity */
+    display: none;
+    border: 1px solid rgb(104,103,83);
+}
+
+.project:hover .cloudprojecthover {
+    display: block;
+}
+
+
+
+
 
 .terminal {
     height: 40px;
@@ -201,7 +226,7 @@ body {
     left: 0;
     width: 0;
     height: 0;
-    background-color: gray;
+    background-color: rgb(228,186,32);
     /* padding: 10px; */
     box-sizing: border-box;
     border-radius: 5px;
@@ -209,6 +234,8 @@ body {
     z-index: 1; /* Make sure it's above other elements */
     opacity: 0;
 }
+
+
 
 .projecttaskbar{
     color:  rgb(156, 142, 142);
@@ -234,14 +261,23 @@ body {
     opacity: 1;
 }
 
+.projectscontainer{
+    display: flex;
+}
+
+
+
 .project {
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
     background-color: white;
     border-radius: 2px;
     cursor: pointer;
     margin: 10px;
+    border: 1px solid rgb(56, 54, 54);
 }
+
+
 
 .foldersnames{
     margin: 10px; 
