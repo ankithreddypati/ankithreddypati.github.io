@@ -56,6 +56,11 @@ body {
     margin: 4px; 
 }
 
+.ideaimage{
+    height: 20px;
+    margin:9px;
+}
+
 .cloudprojecthover {
     position: absolute;
     top: 0;
