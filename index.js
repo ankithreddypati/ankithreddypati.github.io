@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         terminalWindow.classList.toggle('visible');
     });
 
+    const photoelement = document.querySelector('.myphoto');
+    const aboutmewin = document.querySelector('.aboutmeanimationwindow');
+
+    photoelement.addEventListener('click', function() {
+        aboutmewin.classList.toggle('visible');
+    });
+
     // Projects folder window toggle
     const projectsElement = document.querySelector('.projectsfolder');
     const projectsWindow = document.querySelector('.projectsfolderwindow');
