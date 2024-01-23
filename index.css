@@ -26,7 +26,7 @@ body {
     position: relative; 
     top: 50%; 
     left: 50%; 
-    transform: translate(-50%, -60%); 
+    transform: translate(-50%, -64%); 
     height: 360px; 
     width: 660px; 
     /* height: 50vh; 
@@ -47,10 +47,32 @@ body {
     width: 30%;
     background-color: rgb(255,144,147);
     /* border-radius: 5px; */
-    transform: translate(110%, 445%); 
+    transform: translate(110%, 382%); 
     /* border: 1px solid rgb(168,113,105); */
     border: 1px solid rgb(56, 54, 54);
 }
+
+.monitorstand{
+    height: 64px;
+    width: 40px;
+    background-color: rgb(172,172,160);;
+    transform: translate(710%, 269%); 
+    border: 1px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.standbase {
+    position: absolute; 
+    height: 40px;
+    width: 130px;
+    background-color: rgb(172, 172, 160);
+    transform: translate(190%, 538%);
+    border: 1px solid black;
+
+    clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
+}
+
 
 .cloudimage, .foodiamge , .houseimage{
     height: 25px;
@@ -61,22 +83,25 @@ body {
     height: 20px;
     margin:9px;
 }
+ 
 
-.cloudprojecthover {
+.projecticonhover {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 120%;
-    height: 260%;
-    transform: translate(12%, 12%); 
-    background-color: rgb(216,176,164);/* Set the background color and opacity */
-    color: #636e72;
+    top: 40%; /* Adjusted to start right below the project icon */
+    left: 30%; /* Center below the project icon */
+    transform: translateX(-50%) translateY(10px); /* Center it and move it slightly down */
+    width: 40%; /* Adjust width as necessary */
+    height: auto; /* Let height adjust to content */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     display: none;
-    border: 1px solid rgb(104,103,83);
-    font-size: 25px;
+    font-size: 8px;
+    padding: 5px; /* Add some padding around the text */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+    z-index: 1; /* Ensure it's above other content */
 }
 
-.project:hover .cloudprojecthover {
+.project:hover .projecticonhover {
     display: block;
 }
 
@@ -177,14 +202,12 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.mailicon {
+.emailicon {
     position: relative;
-    height: 25px;
-    width: 35px;
-    background-color: skyblue;
-    border-radius: 4px; /* Slightly rounded corners */
-    transform: translate(10%, 30%);
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  */
+    height: 30px;
+    width: 32px;
+    border-radius: 4px; 
+    transform: translate(16%, 10%);
 }
 
 
@@ -346,7 +369,6 @@ body {
     z-index: 1; /* Make sure it's above other elements */
     opacity: 0;
     
-    /* border: 2px solid rgb(84,59,47) */
 }
 
 
@@ -361,77 +383,20 @@ body {
 }
 
 
-
-
 .resumefile {
     position: relative;
-    height: 40px;
-    width: 30px;
-    background-color: whitesmoke;
-    margin: 12px;
        
 }
 
-.resumefile:before {
-    content: "";
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  width: 0px;
-  height: 0px;
-  border-bottom: 12px solid #eee;
-  border-right: 12px solid rgb(216,95,71);
-  -webkit-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
-  -moz-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
-  box-shadow: -7px 7px 7px rgba(0,0,0,0.3);   
-  }
-
-  .cvword{
-    padding-top: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(156, 142, 142);
-    font-size: 10px;
-    margin: 2px;
-    font-weight: bolder;
-    text-shadow:
-        -0.5px -0.5px 0 rgba(0, 0, 0, 0.3),  
-         0.5px -0.5px 0 rgba(0, 0, 0, 0.3),
-        -0.5px  0.5px 0 rgba(0, 0, 0, 0.3),
-         0.5px  0.5px 0 rgba(0, 0, 0, 0.3);
-  }
-
-  .cvlines {
-    margin: 2px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 10px; 
+.projecticon{
+    height: 42px;
+    margin: 13px;
+     
 }
 
-.cvline1, .cvline2{
-    height: 2px;
-    width: 80%; 
-    border-radius: 5px;
-    background-color: rgb(156, 142, 142);
-}
-
-.cvline3 {
-    height: 2px;
-    width: 50%; 
-    border-radius: 5px;
-    background-color: rgb(156, 142, 142);
-}
-
-
-.projectsfolder{
-    height: 30px;
-    width: 42px;
-    background-color: rgb(208,228,229);
-    border-radius: 2px;
-    margin: 12px;
-    border: 1px solid rgb(113, 111, 111);
-     ; 
-
+.cvicon{
+    height: 42px;
+    margin: 9px;  
 }
 
 .contactfolder{

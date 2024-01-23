@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     // Projects folder window toggle
-    const projectsElement = document.querySelector('.projectsfolder');
+    const projectsElement = document.querySelector('.projecticon');
     const projectsWindow = document.querySelector('.projectsfolderwindow');
     let zIndex = 1;
     projectsElement.addEventListener('click', function() {
         projectsWindow.classList.toggle('visible');
     });
 
-    const resumeFile = document.querySelector('.resumefile');
+    const resumeFile = document.querySelector('.cvicon');
     const resumeWindow = document.querySelector('.resumewindow');
 
     resumeFile.addEventListener('click', function() {
