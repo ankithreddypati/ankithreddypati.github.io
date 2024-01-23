@@ -87,7 +87,7 @@ body {
 
 .projecticonhover {
     position: absolute;
-    top: 40%; /* Adjusted to start right below the project icon */
+    top: 40%; 
     left: 30%; /* Center below the project icon */
     transform: translateX(-50%) translateY(10px); /* Center it and move it slightly down */
     width: 40%; /* Adjust width as necessary */
