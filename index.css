@@ -15,7 +15,7 @@ body {
 
 
 .monitor {
-    position: relative; 
+    position: fixed; 
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -64%); 
@@ -66,7 +66,7 @@ body {
     height: 12px;
     width: 40px;
     background-color: rgb(151,144,134);
-    transform: translate(745%, 302%); 
+    transform: translate(746%, 300%); 
 }
 
 .standbase {
