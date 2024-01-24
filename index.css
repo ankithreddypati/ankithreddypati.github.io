@@ -27,7 +27,7 @@ body {
 
 .table {
     width:105vw;
-    height: 172px;
+    height: 178px;
     background-color: white;
     position: fixed;
     transform: translate(-27%, 103%);  
@@ -66,7 +66,7 @@ body {
     height: 12px;
     width: 40px;
     background-color: rgb(151,144,134);
-    transform: translate(746%, 300%); 
+    transform: translate(748%, 300%); 
 }
 
 .standbase {
