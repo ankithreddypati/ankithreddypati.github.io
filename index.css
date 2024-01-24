@@ -53,26 +53,56 @@ body {
 }
 
 .monitorstand{
-    height: 64px;
+    height: 74px;
     width: 40px;
-    background-color: rgb(172,172,160);;
-    transform: translate(710%, 269%); 
+    background-color: rgb(172,172,160);
+    transform: translate(710%, 148%); 
     border: 1px solid black;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 
+.standshadow{
+    height: 12px;
+    width: 40px;
+    background-color: rgb(151,144,134);
+    transform: translate(745%, 302%); 
+}
+
 .standbase {
     position: absolute; 
     height: 40px;
-    width: 130px;
+    width: 160px;
     background-color: rgb(172, 172, 160);
-    transform: translate(190%, 538%);
+    transform: translate(147%, 400%);
     border: 1px solid black;
 
     clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
 }
 
+/* .baseshadow{
+    height: 14px;
+    width: 169px;
+    background-color: rgb(151,144,134);
+    transform: translate(139%, 1200%);
+    clip-path: polygon(0% 290%, 10% 0%, 90% 0%, 100% 100%);
+
+} */
+
+.shadow1 {
+   height: 22px;
+   width: 610px;
+   background-color: rgb(218,217,195);
+   transform: translate(3%, 813%);
+}
+
+.shadow2{
+    height: 44px;
+   width: 760px;
+   background-color:  rgb(216,211,208);
+   transform: translate(-7.5%, 408%);
+   clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
+}
 
 .cloudimage, .foodiamge , .houseimage{
     height: 25px;
@@ -88,17 +118,17 @@ body {
 .projecticonhover {
     position: absolute;
     top: 40%; 
-    left: 30%; /* Center below the project icon */
-    transform: translateX(-50%) translateY(10px); /* Center it and move it slightly down */
-    width: 40%; /* Adjust width as necessary */
-    height: auto; /* Let height adjust to content */
+    left: 30%; 
+    transform: translateX(-50%) translateY(10px); 
+    width: 40%; 
+    height: auto; 
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     display: none;
     font-size: 8px;
-    padding: 5px; /* Add some padding around the text */
-    box-sizing: border-box; /* Include padding in width/height calculations */
-    z-index: 1; /* Ensure it's above other content */
+    padding: 5px; 
+    box-sizing: border-box; 
+    z-index: 1; 
 }
 
 .project:hover .projecticonhover {
@@ -233,7 +263,7 @@ body {
     height: 12px;
     width: 5px;
     margin-left: 4px;
-    animation: blink 0.5s infinite alternate; /* Blinking animation */
+    animation: blink 0.5s infinite alternate; 
 }
 
 @keyframes blink {
