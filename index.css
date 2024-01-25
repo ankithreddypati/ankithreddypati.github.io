@@ -27,10 +27,10 @@ body {
 
 .table {
     width:105vw;
-    height: 178px;
+    height: 180px;
     background-color: white;
     position: fixed;
-    transform: translate(-27%, 103%);  
+    transform: translate(-27%, 99%);  
     border-top: 1px solid black;
 }
 
@@ -440,56 +440,12 @@ body {
 }
 
 
-.java-box {
-    width: 70px;
-    height: 70px;
-    background-color: white;
-    border: 2px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.java-logo {
-    position: relative;
-}
 
-.cup {
-    width: 40px;
-    height: 35px;
-    background-color: red;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    position: relative;
-    transform: translate(0,50%);
-}
 
-.handle {
-    width: 12px;
-    height: 12px;
-    border: 3px solid red;
-    border-top-left-radius: 12px;    /* Rounded top-left corner */
-    border-top-right-radius: 10px;   /* Rounded top-right corner */
-    border-bottom-left-radius: 0;    /* Sharp bottom-left corner */
-    border-bottom-right-radius: 16px; 
-    position: absolute;
-    right: -10px;
-    top: -3px;
-}
 
-.steam {
-    width: 2px;
-    height: 15px;
-    background-color: red;
-    position: absolute;
-    top: -3px;
-    border-radius: 2px;
-}
 
-.steam1{
-    left: 12px;
-    top: -6px;
-}
+
 
 /* resumefilewindow */
 
@@ -556,16 +512,119 @@ body {
     
     .aboutmeanimationwindow.visible {
         display: block;
-        top: 23%; /* Position where you want the terminal window to end up */
+        top: 23%; 
         left: 20%;
         width: 40%;
         height: 60%;
         opacity: 1;
     }
 
-  
 
+    .rectangle {
+        position: relative; 
+        width: 210px;
+        height: 370px;
+        font-family: 'Libre Franklin', sans-serif;
+        overflow: hidden;
+        perspective: 240px;
+        perspective-origin: center 15%;
+        border: 0.2px solid #411f19;
+        transform: translate(-135%, -115%); 
+        border-radius: 0;
+        border: 10px solid rgb(88,63,15);
+    }
+
+    .recatangleshadow1{
+        height: 30px;
+        width: 30px;
+        background-color:green;
+    
+
+    }
+    
+    .rectangleshadow2{
+        height: 10px;
+        width: 230px;
+        background-color: rgb(216,211,209);
+        transform: translate(-135%, -3420%); 
+        clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
+      }
+
+    .background {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%; 
+        height: 100%;
+        background: no-repeat center/cover url(images/space.jpg);
+    }
+
+    .fade {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 40vh;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 1)
+        );
+        z-index: 10;
+      }
+    
+      .text-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: rotateX(64deg) scale(0.55, 0.3) translateY(120vh);
+        animation: 60s linear 0s infinite translateText;
+      }
+      .text {
+        font-size: 2vh;
+        color: rgb(228,186,32);
+        text-align: justify;
+      }
+      
+      @keyframes translateText {
+        0% {
+          transform: rotateX(64deg) scale(0.55, 0.3) translateY(120vh);
+        }
+        100% {
+          transform: rotateX(64deg) scale(0.55, 0.3) translateY(-400vh);
+        }
+      }
+
+
+      
+
+      .sticker1 {
+        width: 9px;
+        height: 35px;
+        background-color: #e8e8d1;
+        border: 0.2px solid #411f19;
+        /* Transformations */
+        transform: translate(135%, -20%) rotate(50.96deg);
+        transform-origin: left top;
+      }
+      
+      .sticker2 {
+        width: 9px;
+        height: 35px;
+        background-color: #e8e8d1;
+        border: 0.2px solid #411f19;
+        /* Transformations */
+        transform: translate(1550%, -120%) rotate(-50.96deg);
+        transform-origin: right top;
+      }
 
    
+      .skillicon {
+        height: 30px;
+        width: 32px;
+        transform: translate(16%, 10%);
+    }
 
-
+ 
