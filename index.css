@@ -605,7 +605,7 @@ body {
         background-color: #e8e8d1;
         border: 0.2px solid #411f19;
         /* Transformations */
-        transform: translate(2700%, -130%) rotate(-50.96deg);
+        transform: translate(2950%, -130%) rotate(-50.96deg);
         transform-origin: right top;
       }
 
@@ -630,7 +630,7 @@ body {
     width: 300px;
     height: 6px;
     background-color: rgb(198,193,173);
-    transform: translate(-0.2%, -950%);
+    transform: translate(-0.2%, -910%);
 
   }
   
