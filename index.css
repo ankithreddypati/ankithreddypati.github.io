@@ -902,7 +902,7 @@ body {
     height: 6%;
     border: 2px solid transparent; 
     border-top: 2px solid #422102; 
-    border-radius: 150% / 30%; /* Adjust the radius to create a smile curve */
+    border-radius: 150% / 30%; 
     clip-path: inset(0 12% 18%);
 }
 
@@ -1488,5 +1488,29 @@ body {
   
 
 
+  .greeting {
+    position: absolute;
+    top: 20%; 
+    left: 50%;
+    transform: translateX(90%); 
+    font-size: 16px; 
+    color: white; 
+    font-weight: bold;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    
+  
+}
 
+.greeting {
+    opacity: 0; 
+    animation: fadeInGreeting 1s 0.5s forwards;
+}
 
+@keyframes fadeInGreeting {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -225,3 +225,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const aboutMeWindow = document.querySelector('.aboutmeanimationwindow');
     aboutMeWindow.classList.add('visible');
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const greetings = [
+        'Hello', 
+        'नमस्ते', 
+        '안녕하세요', 
+        '你好', 
+        'Hola', // Spanish
+        'Bonjour', // French
+        'Hallo', // German
+        'Ciao', // Italian
+        'Привет', // Russian
+    ];
+
+    const greetingElement = document.querySelector('.greeting');
+    let currentGreeting = 0;
+
+    function changeGreeting() {
+        greetingElement.textContent = greetings[currentGreeting];
+        currentGreeting = (currentGreeting + 1) % greetings.length;
+    }
+
+    setInterval(changeGreeting, 2000);
+
+    changeGreeting();
+});
+
