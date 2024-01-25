@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const resclosebutton = document.querySelector('.resclosebutton');
     const terminalclose= document.querySelector('.terminalclosebutton')
+    const ankithclose = document.querySelector('.ankithclosebutton')
 
     resclosebutton.addEventListener('click', function() {
         resumeWindow.classList.toggle('show');
@@ -39,10 +40,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     terminalclose.addEventListener('click', function() {
         terminalWindow.classList.toggle('visible');
     });
-
     const projectclose = document.querySelector('.projectclosebutton');
     projectclose.addEventListener('click', function() {
         projectsWindow.classList.toggle('visible');
+    });
+     
+    ankithclose.addEventListener('click', function() {
+        aboutmewin.classList.toggle('visible');
     });
 
 
@@ -71,7 +75,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         this.style.zIndex=  ++zIndex;
     });
 
-
+    aboutmewin.addEventListener('click',function(){
+        this.style.zIndex=  ++zIndex;
+    });
 
     
 
@@ -83,7 +89,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     makeDraggable(resumeWindow);
 
-
+    makeDraggable(aboutmewin);
     
 
 });
@@ -120,3 +126,102 @@ function makeDraggable(element) {
     element.addEventListener('mousedown', onMouseDown);
 }
 
+document.addEventListener('mousemove', function(event) {
+    const ankith = document.querySelector('.ankith'); 
+    const eyes = document.querySelectorAll('.eye-r, .eye-l');
+
+    eyes.forEach(eye => {
+        const { left, top, width, height } = eye.getBoundingClientRect();
+        const eyeCenterX = left + width / 2;
+        const eyeCenterY = top + height / 2;
+        const deltaX = event.clientX - eyeCenterX;
+        const deltaY = event.clientY - eyeCenterY;
+        const angle = Math.atan2(deltaY, deltaX);
+        const maxDistance = Math.min(width, height) / 10; 
+        const distance = Math.min(maxDistance, Math.hypot(deltaX, deltaY));
+        
+        const moveX = distance * Math.cos(angle) + 'px';
+        const moveY = distance * Math.sin(angle) + 'px';
+
+        // Apply the calculated positions as CSS variables
+        ankith.style.setProperty('--eye-move-x', moveX);
+        ankith.style.setProperty('--eye-move-y', moveY);
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    let currentDirectory = 'home'; 
+
+    function createInputLine() {
+        const terminalWindow = document.querySelector('.terminalwindow');
+        const terminalInputContainer = document.createElement('div');
+        terminalInputContainer.className = 'terminalinfocontainer';
+
+        terminalInputContainer.innerHTML = `
+            <div class="terminalinside">ankith's@pc${currentDirectory === 'projects' ? '/projects' : ''} : ~ </div>
+            <div class="dollarinside">$</div>
+            <div class="blinkdabba"></div>
+            <input class="terminaldabba2" type="text">
+        `;
+
+        terminalWindow.appendChild(terminalInputContainer);
+
+        const inputField = terminalInputContainer.querySelector('.terminaldabba2');
+        inputField.focus();
+
+        inputField.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); 
+                const command = inputField.value.trim();
+                inputField.disabled = true; 
+
+                executeCommand(command, terminalWindow, terminalInputContainer);
+            }
+        });
+    }
+
+    function executeCommand(command, terminalWindow, inputContainer) {
+        const output = document.createElement('div');
+        output.className = 'terminaloutput';
+
+        switch (command.toLowerCase()) {
+            case 'ls':
+                if (currentDirectory === 'home') {
+                    output.innerHTML = 'resume projects';
+                } else if (currentDirectory === 'projects') {
+                    output.innerHTML = 'cashehe cloudnativeapp pebblesmartwatchapp rentaway ';
+                }
+                break;
+            case 'cd resume':
+                output.innerHTML = 'resume is not a directory.';
+                break;
+            case 'nano resume':
+                const resumeWindow = document.querySelector('.resumewindow');
+                resumeWindow.classList.add('show');
+                // output.innerHTML = 'Opening resume...';
+                break;
+            case 'cd projects':
+                currentDirectory = 'projects';
+                // output.innerHTML = 'Switched to /projects';
+                break;
+            default:
+                output.innerHTML = `Unknown command: ${command}`;
+                break;
+        }
+
+        terminalWindow.appendChild(output);
+        createInputLine(); 
+
+        terminalWindow.scrollTop = terminalWindow.scrollHeight;
+    }
+
+    createInputLine(); 
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Assuming the window is initially hidden, add 'visible' to show it
+    const aboutMeWindow = document.querySelector('.aboutmeanimationwindow');
+    aboutMeWindow.classList.add('visible');
+});
