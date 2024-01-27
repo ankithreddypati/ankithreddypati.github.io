@@ -1,10 +1,19 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+
+    
     // Terminal window toggle
     const terminalElement = document.querySelector('.terminal');
     const terminalWindow = document.querySelector('.terminalwindow');
+    
 
     terminalElement.addEventListener('click', function() {
         terminalWindow.classList.toggle('visible');
+        if (terminalWindow.classList.contains('visible')) {
+            const terminalInput = document.querySelector('.terminaldabba2');
+            if (terminalInput) {
+                terminalInput.focus();
+            }
+        }
     });
 
     const photoelement = document.querySelector('.myphoto');
@@ -143,7 +152,6 @@ document.addEventListener('mousemove', function(event) {
         const moveX = distance * Math.cos(angle) + 'px';
         const moveY = distance * Math.sin(angle) + 'px';
 
-        // Apply the calculated positions as CSS variables
         ankith.style.setProperty('--eye-move-x', moveX);
         ankith.style.setProperty('--eye-move-y', moveY);
     });
@@ -151,30 +159,33 @@ document.addEventListener('mousemove', function(event) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
     let currentDirectory = 'home'; 
+    const terminalWindow = document.querySelector('.terminalwindow');
+   
 
     function createInputLine() {
-        const terminalWindow = document.querySelector('.terminalwindow');
         const terminalInputContainer = document.createElement('div');
         terminalInputContainer.className = 'terminalinfocontainer';
 
         terminalInputContainer.innerHTML = `
-            <div class="terminalinside">ankith's@pc${currentDirectory === 'projects' ? '/projects' : ''} : ~ </div>
+            <div class="terminalinside">Ankith's@website~/home${currentDirectory !== 'home' ? '/' + currentDirectory : ''} : ~ </div>
             <div class="dollarinside">$</div>
-            <div class="blinkdabba"></div>
             <input class="terminaldabba2" type="text">
         `;
 
         terminalWindow.appendChild(terminalInputContainer);
 
         const inputField = terminalInputContainer.querySelector('.terminaldabba2');
-        inputField.focus();
+        if (inputField) {
+            inputField.focus();
+        }
 
         inputField.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
-                event.preventDefault(); 
+                event.preventDefault();
                 const command = inputField.value.trim();
-                inputField.disabled = true; 
+                inputField.disabled = true;
 
                 executeCommand(command, terminalWindow, terminalInputContainer);
             }
@@ -196,14 +207,31 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'cd resume':
                 output.innerHTML = 'resume is not a directory.';
                 break;
+            case 'cd ..':
+                currentDirectory = 'home'; 
+            
+                break;
             case 'nano resume':
                 const resumeWindow = document.querySelector('.resumewindow');
                 resumeWindow.classList.add('show');
-                // output.innerHTML = 'Opening resume...';
                 break;
             case 'cd projects':
                 currentDirectory = 'projects';
-                // output.innerHTML = 'Switched to /projects';
+                break;
+            case 'nano cashehe':
+                window.open('https://cashehe.ankithreddy.me', '_blank');
+                break;
+            case 'nano cloudnativeapp':
+                window.open('https://github.com/CloudNativeWebApplication', '_blank');
+                break;
+            case 'nano pebblesmartwatchapp':
+                window.open('https://github.com/Scribesync', '_blank');
+                break;
+            case 'nano rentaway':
+                window.open('https://github.com/neu-mis-info-6150-spring-2023/final-project-group-rentaway', '_blank');
+                break;
+            case 'help':
+                output.innerHTML = 'Available commands:<br>ls: List directories/files<br>cd [directory]: Change directory<br>nano [file]: Open file or project source website<br>cd ..: Go back to the home directory';
                 break;
             default:
                 output.innerHTML = `Unknown command: ${command}`;
@@ -215,13 +243,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
         terminalWindow.scrollTop = terminalWindow.scrollHeight;
     }
+     function showInitialHelp() {
+        const helpOutput = document.createElement('div');
+        helpOutput.className = 'terminaloutput';
+        helpOutput.innerHTML = '<div class="terminalinfocontainer">' +
+                               '<div class="terminalinside">>> Ankith\'s@website~/home : ~ </div>' +
+                               '<div class="dollarinside">$</div>' +
+                               '<div class="commandline">help</div>' +
+                               '</div>' +
+                               'Available commands:ls: List directories/files<br>' +
+                               'cd [directory]: Change directory<br>' +
+                               'nano [file]: Open file or project source website<br>' +
+                               'cd ..: Go back to the home directory';
+        terminalWindow.appendChild(helpOutput);
+    }
 
-    createInputLine(); 
+    showInitialHelp();
+    createInputLine();
+
+
 });
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Assuming the window is initially hidden, add 'visible' to show it
     const aboutMeWindow = document.querySelector('.aboutmeanimationwindow');
     aboutMeWindow.classList.add('visible');
 });
@@ -238,6 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Hallo', // German
         'Ciao', // Italian
         'Привет', // Russian
+         'வணக்கம்'
     ];
 
     const greetingElement = document.querySelector('.greeting');
