@@ -587,14 +587,14 @@ body {
 
     .rectangle {
         position: relative; 
-        width: 210px;
-        height: 370px;
+        width: 230px;
+        height: 420px;
         font-family: 'Libre Franklin', sans-serif;
         overflow: hidden;
         perspective: 240px;
         perspective-origin: center 15%;
         border: 0.2px solid #411f19;
-        transform: translate(-135%, -115%); 
+        transform: translate(-150%, -115%); 
         border-radius: 0;
         border: 10px solid rgb(88,63,15);
     }
@@ -602,10 +602,9 @@ body {
     
     .rectangleshadow1{
         height: 8px;
-        width: 289px;
+        width: 251px;
         background-color: rgb(169, 168, 140);
-        transform: translate(-117%, -5609%); 
-        clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
+        transform: translate(-150%, -6320%); 
       }
 
     .background {
